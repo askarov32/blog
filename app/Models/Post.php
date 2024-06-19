@@ -9,10 +9,21 @@ class Post extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'content', 'image', 'published'];
-
+    protected $fillable = [
+        'title',
+        'body',
+        'user_id',
+        'category_id',
+        'is_published',
+    ];
+    
     public function categories()
     {
         return $this->belongsToMany(Category ::class);
+    }
+
+    public function hasAnyRole($roles)
+    {
+        return $this->roles()->whereIn('name', $roles)->exists();
     }
 }
