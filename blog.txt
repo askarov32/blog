@@ -43,7 +43,9 @@
 │   │   ├── 0001_01_01_000002_create_jobs_table.php
 │   │   ├── 2024_06_19_152319_create_categories_table.php
 │   │   ├── 2024_06_19_152319_create_posts_table.php
-│   │   └── 2024_06_19_152319_create_roles_table.php
+│   │   ├── 2024_06_19_152319_create_roles_table.php
+│   │   ├── 2024_06_19_173039_create_category_post_table.php
+│   │   └── 2024_06_19_173039_create_role_user_table.php
 │   └── seeders
 │       └── DatabaseSeeder.php
 ├── node_modules
@@ -510,4 +512,4 @@
 │       └── assert
 └── vite.config.js
 
-258 directories, 252 files
+258 directories, 254 files
