@@ -15,4 +15,9 @@ class Role extends Model
     {
         return $this->belongsToMany(User::class);
     }
+
+    public function hasAnyRole($roles)
+    {
+        return $this->roles()->whereIn('name', $roles)->exists();
+    }
 }
