@@ -13,6 +13,7 @@
                     <th>Title</th>
                     <th>Image</th>
                     <th>Categories</th>
+                    <th>Published</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -27,17 +28,18 @@
                             @endif
                         </td>
                         <td>{{ $post->category->name }}</td>
+                        <td>{{ $post->is_published ? 'Yes' : 'No' }}</td>
                         <td>
                             <a href="{{ route('admin.posts.show', $post) }}" class="btn btn-info">View</a>
                             @can('update', $post)
                                 <a href="{{ route('admin.posts.edit', $post) }}" class="btn btn-warning">Edit</a>
                             @endcan
                             @can('delete', $post)
-                                <form action="{{ route('admin.posts.destroy', $post) }}" method="POST" style="display:inline;">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Delete</button>
-                                </form>
+                            <form action="{{ route('admin.posts.destroy', $post) }}" method="POST" style="display:inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
                             @endcan
                         </td>
                     </tr>

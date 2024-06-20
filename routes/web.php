@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\PostViewController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\PostViewController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -24,4 +24,3 @@ Route::get('/posts', [PostViewController::class, 'index'])->name('posts');
 Route::get('/', function () {
     return view('welcome');
 });
-
