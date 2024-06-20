@@ -14,9 +14,19 @@ class Post extends Model
         'body',
         'user_id',
         'category_id',
-        'is_published',
         'image',
+        'is_published',
     ];
+
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class, 'category_post');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
     public function category()
     {
