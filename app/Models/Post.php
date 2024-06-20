@@ -15,15 +15,11 @@ class Post extends Model
         'user_id',
         'category_id',
         'is_published',
+        'image',
     ];
-    
-    public function categories()
-    {
-        return $this->belongsToMany(Category ::class);
-    }
 
-    public function hasAnyRole($roles)
+    public function category()
     {
-        return $this->roles()->whereIn('name', $roles)->exists();
+        return $this->belongsTo(Category::class);
     }
 }

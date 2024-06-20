@@ -34,7 +34,7 @@ class PostPolicy
 
     public function update(User $user, Post $post)
     {
-        return $user->hasAnyRole(['admin', 'moderator']);
+        return $user->hasAnyRole(['moderator']);
     }
 
     public function delete(User $user, Post $post)

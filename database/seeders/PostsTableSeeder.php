@@ -15,11 +15,12 @@ class PostsTableSeeder extends Seeder
         $tech = Category::where('name', 'Tech')->first();
 
         Post::create([
-            'title' => 'First Post',
-            'body' => 'This is the body of the first post.',
+            'title' => 'Toyota Supra Post',
+            'body' => 'Very good car the supra itself.',
             'user_id' => $admin->id,
             'category_id' => $tech->id,
             'is_published' => true,
+            'image' => 'https://di-uploads-pod16.dealerinspire.com/toyotaofnorthcharlotte/uploads/2019/01/N-Charlotte-Toyota-sports-car.jpeg',
         ]);
     }
 }
