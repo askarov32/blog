@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostViewController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\RoleController;
@@ -18,6 +19,9 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/posts', [PostViewController::class, 'index'])->name('posts');
+
 Route::get('/', function () {
     return view('welcome');
 });
+
