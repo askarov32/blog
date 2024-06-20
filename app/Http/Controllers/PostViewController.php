@@ -9,11 +9,11 @@ class PostViewController extends Controller
 {
     public function index(Request $request)
     {
-        $perPage = $request->input('per_page', 10);
+        $perPage = $request->input('per_page', 5); 
         $posts = Post::where('is_published', true)
             ->with('category')
             ->paginate($perPage);
 
-        return view('posts', compact('posts'));
+        return view('posts', compact('posts', 'perPage'));
     }
 }
