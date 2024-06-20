@@ -8,6 +8,6 @@
     @endif
     <h2>{{ $post->body }}</h2>
     <h2><strong>Category:</strong> {{ optional($post->category)->name }}</h2>
-    <a href="{{ route('admin.posts.index') }}" class="btn btn-secondary">Back to Posts</a>
+    <a href="{{ route('posts') }}" class="btn btn-secondary">Back to Posts</a>
 </div>
 @endsection
